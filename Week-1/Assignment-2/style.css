@@ -1,0 +1,134 @@
+/* =================================GLOBAL==================================== */
+
+body,
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main-nav {
+  padding-inline-start: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* =================================HEADER==================================== */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+/* ==================================NAV===================================== */
+
+.site-logo,
+.nav-btn {
+  margin: 10px;
+}
+
+/* =================================CONTENT==================================== */
+
+.banner {
+  display: flex;
+  justify-content: center;
+  padding: 90px;
+  margin-top: 194px;
+  background-color: #cfdcec;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  line-height: 70px;
+}
+
+.group-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.content-box {
+  width: 80vw;
+  min-height: 190px;
+  background-color: #8b98a8;
+  text-align: center;
+}
+
+.box-title {
+  margin-top: 10px;
+}
+
+.cta-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-btn {
+  margin: 30px;
+  width: 120px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #dfedfe;
+}
+
+/* ================================= Media Queries(for ipad & pc)==================================== */
+
+@media screen and (min-device-width: 767px) {
+  header,
+  .main-nav {
+    flex-direction: row;
+    line-height: 40px;
+  }
+
+  .site-logo {
+    margin-left: 40px;
+    margin-right: auto;
+  }
+
+  .main-nav {
+    width: 500px;
+    justify-content: space-around;
+  }
+
+  .banner {
+    margin-top: 60px;
+  }
+
+  .content-box {
+    width: 477.5px;
+  }
+
+  .group-box {
+    width: 980px;
+  }
+}
+
+@media screen and (min-device-width: 1200px) {
+  .content-box {
+    width: 587.5px;
+  }
+
+  .group-box {
+    width: 1200px;
+    max-width: max-content;
+  }
+}

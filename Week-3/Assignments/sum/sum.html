@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Week 3 Assignments</title>
+  </head>
+
+  <body>
+    <div class="input-wrapper">
+      <input
+        type="text"
+        name="number"
+        placeholder="Enter positive integer,please"
+      />
+      <button id="submit" onclick="addNum()">submit</button><br />
+      <img
+        src="https://saintif.com/wp-content/uploads/2018/07/think-meme.jpg"
+      />
+    </div>
+
+    <script>
+      //Trying not to use jQuery is the biggest mistake I had made so far
+      //The process of selecting and debugging almost killed me QAQ
+      //BTW,putting script block on the top of Html is the second biggest mistake
+
+      const xhr = new XMLHttpRequest();
+
+      let addNum = () => {
+        let input = document.getElementsByName("number")[0].value;
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            let ans = xhr.responseText;
+            console.log(ans);
+            //create output without jQuery(which is a huge mistake in my opinion)
+            let newP = document.createElement("p");
+            let newResult = document.createTextNode(
+              `Input of "${input}" get "${ans}" !`
+            );
+            newP.appendChild(newResult);
+            const inputWrapper =
+              document.getElementsByClassName("input-wrapper")[0];
+            inputWrapper.append(newP);
+          }
+        };
+        xhr.open("GET", `/data?number=${input}`);
+        xhr.send();
+      };
+    </script>
+  </body>
+</html>

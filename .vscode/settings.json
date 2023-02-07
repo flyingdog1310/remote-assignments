@@ -1,0 +1,6 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jade]": {
+    "editor.defaultFormatter": "ducfilan.pug-formatter"
+  }
+}
